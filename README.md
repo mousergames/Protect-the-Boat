@@ -11,21 +11,27 @@ https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Input.GetTouch.htm
 
 Initalize touch input variable
 
+
 Initalize first touch input transform
 Intialize last touch input transform
 
+
 Initalize touch vector3
+
 
 Intialize time variable = 0.3 sec
 
+
 Update loop
+
 set touch input variable to the first touch (Input.GetTouch(0))
 
 set first touch input transform to the position of the first touch
 set last touch input transform to the position of the last touch
 
-if both first and last touch are not null{
+if both first and last touch are not null { <br>
   create a new vector3 of the first and last touch
+  
   start courutine that translate/smoothdamp/lerp player into the position and rotation of the last touch in specific time
 
   set both first and last touch to null to repeat
