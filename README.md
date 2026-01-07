@@ -6,12 +6,28 @@ The only control in the entire game is swiping, no buttons or touchpads. If the 
 
 #### Movement Mechanics Pseudocode
 Initalize touch input variable
-Initalize touch input transform
+
+Initalize first touch input transform
+Intialize last touch input transform
+
+Initalize touch vector3
+
+Intialize time variable = 0.3 sec
 
 Update loop
 set touch input variable to the first touch (Input.GetTouch(0))
-set touch input transform to the position of the first touch
-  
+
+set first touch input transform to the position of the first touch
+set last touch input transform to the position of the last touch
+
+if both first and last touch are not null{
+  create a new vector3 of the first and last touch
+  translate/smoothdamp/lerp player into the position of the last touch
+  face player in the direction of the last touches rotation
+
+  set both first and last touch to null to repeat
+}
+
 
 
 ## Fighting Mechanics
