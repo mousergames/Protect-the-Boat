@@ -29,7 +29,7 @@ set touch input variable to the first touch (Input.GetTouch(0))
 set first touch input transform to the position of the first touch
 set last touch input transform to the position of the last touch
 
-if both first and last touch are not null { <br>
+if both first and last touch are not null { 
   create a new vector3 of the first and last touch
   
   start courutine that translate/smoothdamp/lerp player into the position and rotation of the last touch in specific time
