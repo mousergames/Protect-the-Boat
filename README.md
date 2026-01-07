@@ -5,6 +5,10 @@ Protect the Boat will be a simple yet intense fighting game. The player will be 
 The only control in the entire game is swiping, no buttons or touchpads. If the player wants to move, the player will swipe in the direction in which they want to move, the magnitude (length) of this swipe will correspond to the force in which the player is moved in that direction. This creates a sort of jumping around mechanic where the player is highly mobile on the map. The player will only be moved in that direction once the player stops swipping.
 
 #### Movement Mechanics Pseudocode
+
+Resources:
+https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Input.GetTouch.html
+
 Initalize touch input variable
 
 Initalize first touch input transform
@@ -22,13 +26,12 @@ set last touch input transform to the position of the last touch
 
 if both first and last touch are not null{
   create a new vector3 of the first and last touch
-  translate/smoothdamp/lerp player into the position of the last touch
-  face player in the direction of the last touches rotation
+  start courutine that translate/smoothdamp/lerp player into the position and rotation of the last touch in specific time
 
   set both first and last touch to null to repeat
 }
 
-
+<br>
 
 ## Fighting Mechanics
 With the swiping control, the movement doubles as a dash/attack. So, if there is an enemy to the right of the player and the player dashes in that direction, the player can dash through the enemy dealing damage. The damage is then amplified based on the force in which the player dashed through the enemy (magnitude calculation). In addition to dashing, the player will have a set of moves they can perform which are activated by certain swipe patterns. For example, if the player swipes in a cirle around themself the character will do a spin move dealing damage to all surrounding enemies. There will also be combination attacks, for example, if the player wants to spin while dashing, they can stack these attacks on top of each other. This means they could draw a circle around themself, then draw a circle to the left and the player would then be spinning and dashing to the left dealing immense damage to not just enemies the player passes through, but additionally enemies that surround the player in that direction. When an enemy is killed the player will gain coins as well as points, the coins and points given correspond to the type of enemy that was killed; bosses give more coins and points than basic pirates.
